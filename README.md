@@ -107,7 +107,7 @@ Example reservation payload:
 
 
 
-\## Data Model and ER Diagram
+## Data Model and ER Diagram
 
 
 
@@ -115,23 +115,23 @@ The system uses two main entities: `Resource` and `Reservation`. A resource can 
 
 
 
-\*\*Shareable ER Diagram:\*\*  
+**Shareable ER Diagram:**  
 
-\[View the Resource Reservation ER Diagram](https://drive.google.com/file/d/1\_hgiV6acN2s7Vj7ASKqg9tqnp\_jcu6cl/view?usp=sharing)
-
-
-
-\## Engineering Decisions
+[View the Resource Reservation ER Diagram](https://drive.google.com/file/d/1\_hgiV6acN2s7Vj7ASKqg9tqnp\_jcu6cl/view?usp=sharing)
 
 
 
-\- \*\*Conflict validation:\*\* Checks for overlapping confirmed reservations using `existing.startAt < requested.endAt AND existing.endAt > requested.startAt`. Adjacent reservations are allowed.
+## Engineering Decisions
 
-\- \*\*Resource management:\*\* Resources are deactivated rather than deleted to preserve historical records.
 
-\- \*\*Reservation cancellation:\*\* Reservations are cancelled rather than deleted, preserving reservation history.
 
-\- \*\*Database:\*\* PostgreSQL with Prisma ORM is required.
+- **Conflict validation:** Checks for overlapping confirmed reservations using `existing.startAt < requested.endAt AND existing.endAt > requested.startAt`. Adjacent reservations are allowed.
+
+- **Resource management:** Resources are deactivated rather than deleted to preserve historical records.
+
+- **Reservation cancellation:** Reservations are cancelled rather than deleted, preserving reservation history.
+
+- **Database:** PostgreSQL with Prisma ORM is required.
 
 
 
